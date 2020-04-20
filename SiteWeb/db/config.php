@@ -1,7 +1,9 @@
 <?php
 
 //On demarre les sessions
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
 
 //On se connecte a la base de donnee
 $con=mysqli_connect("localhost","root","","student");
