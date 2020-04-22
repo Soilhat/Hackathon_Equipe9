@@ -42,7 +42,6 @@ include('Navbar.php')
             //On recupere le nombre d'utilisateurs pour donner un identifiant a l'utilisateur actuel
             $dn2 = mysqli_num_rows(mysqli_query($con,'select id from student where email = "'.$_SESSION['email'].'"'));
             $id = $dn2;
-            echo $niveau,$options,$id,$_SESSION['email'];
             //On enregistre les informations dans la base de donnee
             $query = 'insert into questionnaire(idStudent, niveau, options, matiereP, matiereD, pref1, pref2, voyage, interet, objectifs,travailler)
             values ('.$id.',"'.$niveau.'", "'.$options.'", "'.$matiereP.'", "'.$matiereD.'", "'.$pref1.'", "'.$pref2.'", "'.$voyage.'", "'.$interet.'","","")';
@@ -57,6 +56,7 @@ include('Navbar.php')
             {
                 //Sinon on dit quil y a eu une erreur
                 $form = true;
+                echo $query;
                 $message = mysqli_error($con);//'Une erreur est survenue lors de l\'inscription.';
             }
     }
@@ -99,7 +99,7 @@ include('Navbar.php')
             <select name="niveau" required>
                 <option value=""></option>
                 <option value="Seconde">Seconde</option>
-                <option value="Première">Première</option>
+                <option value="Premiere">Première</option>
                 <option value="Terminale">Terminale</option>
             </select>
         </div>
@@ -160,7 +160,7 @@ include('Navbar.php')
             <select name="pref1" required>
                 <option value=""></option>
                 <option value="Dessiner ou peindre">Dessiner ou peindre</option>
-                <option value="Jouer aux échecs ou à un jeu de réflexion">Jouer aux échecs ou à un jeu de réflexion</option>
+                <option value="Jouer aux echecs ou a un jeu de réflexion">Jouer aux échecs ou à un jeu de réflexion</option>
                 <option value="Monter un meuble en kit">Monter un meuble en kit</option>
             </select>
         </div><br>
@@ -171,7 +171,7 @@ include('Navbar.php')
             <select name="pref2" required>
                 <option value=""></option>
                 <option value="Vous inscrire à un club ou une association">Vous inscrire à un club ou une association</option>
-                <option value="Gérer votre budget">Gérer votre budget</option>
+                <option value="Gerer votre budget">Gérer votre budget</option>
                 <option value="Réparer un objet">Réparer un objet</option>
             </select>
         </div><br>
@@ -205,7 +205,6 @@ include('Navbar.php')
                 <option value="Bénévolat">Bénévolat</option>
                 <option value="Théâtre">Théâtre</option>
                 <option value="Photographie">Photographie</option>
-                <option value="Cuisine">Cuisine</option>
             </select>
         </div><br>
         <button class="btn waves-effect waves-light" type="submit" value="survey">Valider

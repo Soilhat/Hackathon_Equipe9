@@ -8,7 +8,7 @@ import pickle
 dataset = pd.read_excel('ml_scripts/datatest.xlsx')
 
 # Séparation des features et de la target
-X,y = dataset[dataset.columns[:9]] , dataset["Domaines"]
+X,y = dataset[dataset.columns[:8]] , dataset["Domaines"]
 
 # Modification des variables textuelles en chiffre
 for column in X.columns:
@@ -26,4 +26,4 @@ knn = clf.fit(X, y)
 knn_pred = knn.predict(X_test)
 print("Accuracy : {}".format(accuracy_score(y_test, knn_pred)))
 
-pickle.dump(knn, open("ml_scripts/model.pickle","wb")) # 96% de précision
+pickle.dump(knn, open("ml_scripts/model.pickle","wb")) # 60% de précision

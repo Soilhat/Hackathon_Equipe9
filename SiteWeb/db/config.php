@@ -7,6 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 //On se connecte a la base de donnee
 $con=mysqli_connect("localhost","root","","student");
+$con->set_charset('utf8');
 
 if (mysqli_connect_errno())
 {
