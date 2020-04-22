@@ -138,7 +138,7 @@ ALTER TABLE `student`
 -- Contraintes pour la table `questionnaire`
 --
 ALTER TABLE `questionnaire`
-  ADD CONSTRAINT `questionnaire_ibfk_1` FOREIGN KEY (`idQ`) REFERENCES `student` (`id`);
+  ADD CONSTRAINT `questionnaire_ibfk_1` FOREIGN KEY (`idStudent`) REFERENCES `student` (`id`);
 
 --
 -- Contraintes pour la table `questions`

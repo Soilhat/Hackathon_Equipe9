@@ -44,8 +44,9 @@ include('Navbar.php')
             $id = $dn2;
             echo $niveau,$options,$id,$_SESSION['email'];
             //On enregistre les informations dans la base de donnee
-            if(mysqli_query($con,'insert into questions(idQ, niveau, options, matiereP, matiereD, pref1, pref2, voyage, interet) 
-            values ('.$id.',"'.$niveau.'", "'.$options.'", "'.$matiereP.'", "'.$matiereD.'", "'.$pref1.'", "'.$pref2.'", "'.$voyage.'", "'.$interet.'")'))
+            $query = 'insert into questionnaire(idStudent, niveau, options, matiereP, matiereD, pref1, pref2, voyage, interet, objectifs,travailler)
+            values ('.$id.',"'.$niveau.'", "'.$options.'", "'.$matiereP.'", "'.$matiereD.'", "'.$pref1.'", "'.$pref2.'", "'.$voyage.'", "'.$interet.'","","")';
+            if(mysqli_query($con,$query))
             {
                 //Si ca a fonctionne, on naffiche pas le formulaire
                 $form = false;
@@ -56,7 +57,7 @@ include('Navbar.php')
             {
                 //Sinon on dit quil y a eu une erreur
                 $form = true;
-                $message = 'Une erreur est survenue lors de l\'inscription.';
+                $message = mysqli_error($con);//'Une erreur est survenue lors de l\'inscription.';
             }
     }
     else
