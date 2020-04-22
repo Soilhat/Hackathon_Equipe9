@@ -6,25 +6,15 @@ include('db/config.php')
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Inscription</title>
-
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/view.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!-- Font Icon -->
+        <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
-        <style>body{
-                background-image: url("");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                background-size: 100%;
-            }
-        </style>
+        <!-- Main css -->
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
@@ -32,7 +22,7 @@ include('db/config.php')
     include('Navbar.php')
     ?>
 
-    <br><br><br>
+    <br><br><br><br><br>
     <?php
     //On verifie que le formulaire a ete envoye
     if(isset($_POST['firstname'],$_POST['name'], $_POST['password'], $_POST['passverif'], $_POST['email'])and $_POST['firstname']!='')
@@ -77,7 +67,7 @@ include('db/config.php')
                         exit();
                         ?>
                         <div class="message">Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.<br />
-                            <a href="connexion.php">Se connecter</a></div>
+                            <a href="login.php">Se connecter</a></div>
                         <?php
                     }
                     else
@@ -119,40 +109,68 @@ include('db/config.php')
     {
         $form = true;
     }
-    if($form)
-    {
-        //On affiche un message sil y a lieu
-        if(isset($message))
-        {
-            ?><div class="row" >
-            <div class="col s12 m7">
-                <div class="card" style="max-width:400px">
-                    <div class="card-content">
-                        <div class="message"><?php echo '<div class="message">'.$message.'</div>'; ?><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><?php
-        }
-        //On affiche le formulaire
         ?>
-        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:400px" >
-                <h2 class="w3-wide">Insciption</h2>
-                <p class="w3-justify"><div class="content">
-                    <form action="sign_up.php" method="post">
-                    Veuillez remplir ce formulaire pour vous inscrire:<br/><br/>
-                        <div class="left-align">
-                            <label for="firstname">Prénom</label><input type="text" required name="firstname" value="<?php if(isset($_POST['firstname'])){echo htmlentities($_POST['firstname'], ENT_QUOTES, 'UTF-8');} ?>" /><br/>
-                            <label for="name">Nom</label><input type="text" required name="name" value="<?php if(isset($_POST['name'])){echo htmlentities($_POST['name'], ENT_QUOTES, 'UTF-8');} ?>" /><br/>
-                            <label for="password">Mot de passe<span class="small">(6 caractères min.)</span></label><input type="password" required name="password" /><br/>
-                            <label for="passverif">Mot de passe<span class="small">(vérification)</span></label><input type="password" required name="passverif" /><br/>
-                            <label for="email">Email</label><input type="text" required name="email" value="<?php if(isset($_POST['email'])){echo htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8');} ?>" /><br/>
-                            <button class="btn waves-effect waves-light" type="submit" value="Envoyer">Submit<i class="material-icons right">send</i></button>
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">S'inscrire</h2>
+                    <?php if($form)
+                        {
+                            //On affiche un message sil y a lieu
+                            if(isset($message))
+                            {
+                                ?><div class="row" >
+                                <div class="col s12 m7">
+                                    <div class="card" style="max-width:400px">
+                                        <div class="card-content">
+                                            <div class="message"><?php echo '<div class="message">'.$message.'</div>'; ?><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><?php
+                            }
+                            //On affiche le formulaire
+                    ?>
+                    <form action="sign_up.php" method="POST" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="firstname" id="name" placeholder="Prénom" value="<?php if(isset($_POST['firstname'])){echo htmlentities($_POST['firstname'], ENT_QUOTES, 'UTF-8');} ?>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="name" id="name" placeholder="Nom" value="<?php if(isset($_POST['name'])){echo htmlentities($_POST['name'], ENT_QUOTES, 'UTF-8');} ?>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Email" value="<?php if(isset($_POST['email'])){echo htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8');} ?>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="pass" placeholder="Mot de Passe" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="password" name="passverif" id="re_pass" placeholder="Confirmation Mot de passe" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                         </div>
                     </form>
                 </div>
+                <div class="signup-image">
+                    <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="login.php" class="signup-image-link">Je suis déjà membre</a>
+                </div>
             </div>
+        </div>
+    </section>
         <?php
         }
         ?>
