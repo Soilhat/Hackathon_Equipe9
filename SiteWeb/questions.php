@@ -9,8 +9,10 @@ include('Navbar.php')
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Test</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </head>
         <br><br><br>
     <body>
@@ -88,27 +90,25 @@ include('Navbar.php')
 
 
     <br><br>
-    <div class="w3-container">
-    <div class="w3-card w3-white w3-round w3-margin" style="width:40%"><br>
-    <form action="questions.php" method="post">
-        <h4 class="w3-center">Questionnaire</h4><br>
-        <hr class="w3-clear">
-        <div name="Q1">
-            <p>Question 1 :</p>
-            <label for="niveau">Niveau d'études</label>
-            <select name="niveau" required>
-                <option value=""></option>
+    <div class="card mx-auto" style="width:35%">
+<form action="questions.php" method="post">
+  <h5 class="card-header">Questionnaire</h5>
+  <div class="card-body">
+
+
+    <h5 class="card-title">Niveau d'études</h5>
+    <!--<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>-->
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="Seconde">Seconde</option>
                 <option value="Première">Première</option>
                 <option value="Terminale">Terminale</option>
             </select>
-        </div>
-        <hr class="w3-clear">
-        <div name="Q2">
-            <p>Question 2 :</p>
-            <label for="options">Options</label>
-            <select name="options" required>
-                <option value=""></option>
+
+
+            <h5 class="card-title">Options</h5>
+            <select value=" ptions"class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="Arts">Arts</option>
                 <option value="Biologie et écologie">Biologie et écologie</option>
                 <option value="Histoire-géographie, géopolitique et sciences politiques">Histoire-géographie, géopolitique et sciences politiques</option>
@@ -122,13 +122,11 @@ include('Navbar.php')
                 <option value="Sciences de l'ingénieur">Sciences de l'ingénieur</option>
                 <option value="Sciences économiques et sociales">Sciences économiques et sociales</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q3">
-            <p>Question 3 :</p>
-            <label for="matiereP">Quelles matières du tronc commun te plait le plus :</label>
-            <select name="matiereP" required>
-            <option value=""></option>
+
+
+            <h5 class="card-title">Quelles matières du tronc commun te plait le plus :</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="FR">Français</option>
                 <option value="HG">Histoire-géographie</option>
                 <option value="EMC">Enseignement moral et civique</option>
@@ -137,13 +135,11 @@ include('Navbar.php')
                 <option value="ES">Enseignement scientifique</option>
                 <option value="PHI">Philosophie</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q4">
-            <p>Question 4 :</p>
-            <label for="matiereD">Quelles matières du tronc commun te plait le moins :</label>
-            <select name="matiereD" required>
-                <option value=""></option>
+
+
+            <h5 class="card-title">Quelles matières du tronc commun te plait le moins :</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="FR">Français</option>
                 <option value="HG">Histoire-géographie</option>
                 <option value="EMC">Enseignement moral et civique</option>
@@ -152,52 +148,34 @@ include('Navbar.php')
                 <option value="ES">Enseignement scientifique</option>
                 <option value="PHI">Philosophie</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q5">
-            <p>Question 5 :</p>
-            <label for="pref1">Vous préferez :</label>
-            <select name="pref1" required>
-                <option value=""></option>
+
+            <h5 class="card-title">Vous préférez :</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="Dessiner ou peindre">Dessiner ou peindre</option>
                 <option value="Jouer aux échecs ou à un jeu de réflexion">Jouer aux échecs ou à un jeu de réflexion</option>
                 <option value="Monter un meuble en kit">Monter un meuble en kit</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q6">
-            <p>Question 6 :</p>
-            <label for="pref2">Vous préferez :</label>
-            <select name="pref2" required>
-                <option value=""></option>
+
+
+            <h5 class="card-title">Vous préférez :</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="Vous inscrire à un club ou une association">Vous inscrire à un club ou une association</option>
                 <option value="Gérer votre budget">Gérer votre budget</option>
                 <option value="Réparer un objet">Réparer un objet</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q7">
-            <p>Question 7 :</p>
-            <label for="voyage">Voyage</label>
-            <select name="voyage" required>
-                <option value=""></option>
-                <option value="Oui">Oui</option>
-                <option value="Non">Non</option>
+
+            <h5 class="card-title">Aimes tu voyager ?</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
             </select>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q8">
-            <p>Question 8 :</p>
-            <label for="">Objetcifs</label>
-            <textarea id="objectifs" name="objectifs" rows="5" cols="33">
-            </textarea>
-        </div><br>
-        <hr class="w3-clear">
-        <div name="Q1">
-            <p>Question 9 :</p>
-            <label for="interet">Centres d'intérêts</label>
-            <select name="interet" required>
-                <option value=""></option>
+
+            <h5 class="card-title">Quesl sont tes centres d'intérêts ?</h5>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="width:50%">
+                <option selected>Choose...</option>
                 <option value="Musique">Musique</option>
                 <option value="Sport">Sport</option>
                 <option value="Lecture">Lecture</option>
@@ -207,12 +185,15 @@ include('Navbar.php')
                 <option value="Photographie">Photographie</option>
                 <option value="Cuisine">Cuisine</option>
             </select>
-        </div><br>
-        <button class="btn waves-effect waves-light" type="submit" value="survey">Valider
-        </button><br><br>
-        </form>
-      </div>
-      </div>
+
+            <h5 class="card-title">Quesl sont tes objectifs ?</h5>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" style="width:50%"value="objectfis"></textarea>
+        
+
+    <button type="submit" class="btn btn-primary float-right">Submit</button>
+  </div>
+  </form>
+</div>
     </body>
 
 </html>
