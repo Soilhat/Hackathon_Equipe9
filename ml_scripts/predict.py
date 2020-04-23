@@ -2,7 +2,6 @@
 
 import sys
 import pickle
-import ast
 import pandas as pd
 import numpy as np
 

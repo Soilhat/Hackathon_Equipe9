@@ -1,6 +1,5 @@
 <?php
 include('db/config.php');
-include('Navbar.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +23,7 @@ include('Navbar.php')
     <body>
 
     <?php
-    include('Navbar.php')
-    ?>
-    <?php
+    include('Navbar.php');
 
     $query = "SELECT * FROM `questionnaire` ORDER BY `idQ` DESC LIMIT 1";
     if ($result = mysqli_query($con, $query)) {
@@ -39,12 +36,10 @@ include('Navbar.php')
             $data = array_splice($data, 0, 7);
             array_push($data, $interet);
             $data = json_encode($data, JSON_UNESCAPED_UNICODE);
-            echo $data;
-            $command = "C:\Users\soilh\Anaconda3\python.exe ../ml_scripts/predict.py $data 2>&1";
+            $command = "activate hackathon2020 & python ../ml_scripts/predict.py $data 2>&1";
             shell_exec("activate base");
             $output = shell_exec($command);
-            echo $output;
-            var_dump($output);
+            echo utf8_encode($output);
         }
     
         /* Libère le jeu de résultats */
