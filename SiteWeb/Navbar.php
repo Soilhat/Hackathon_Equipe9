@@ -37,7 +37,7 @@ $dnn = mysqli_fetch_array($req);
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a href="profile.php?id=<?php echo $dnn['id']; ?>" class="dropdown-item" href="edit_infos.php">Mon profil</a>
           <a class="dropdown-item" href="edit_infos.php">Modifier mon profil</a>
-          <a class="dropdown-item" href="dashboard.php">Tableau de bord</a>
+          <a class="dropdown-item" href="dashboard">Tableau de bord</a>
           <a class="dropdown-item" href="questions.php">Mon questionnaire</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="login.php">Déconnexion</a>
