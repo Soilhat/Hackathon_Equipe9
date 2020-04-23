@@ -24,7 +24,7 @@ include('../db/config.php');
             $output = utf8_encode(shell_exec($command));
             ?><div class="container text-center">
             <div class="">Domaine : <?php echo $output;?></div>
-            <a href="dashboard.php">Voir mon Dashboard</a>
+            <a href="../dashboard/index.html">Voir mon Dashboard</a>
             </div>
             <?php
         }

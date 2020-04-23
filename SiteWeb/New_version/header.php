@@ -87,7 +87,7 @@ $dnn = mysqli_fetch_array($req);
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="edit_infos.php">Modifier mon profil</a>
-          <a class="dropdown-item" href="dashboard.php">Tableau de bord</a>
+          <a class="dropdown-item" href="../dashboard/index.html">Tableau de bord</a>
           <a class="dropdown-item" href="questions.php">Mon questionnaire</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="login.php">Déconnexion</a>
