@@ -62,7 +62,7 @@ $dnn = mysqli_fetch_array($req);
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="col-sm-6 col-md-4">
-        <img src="img/logo_ligne.png" width="100%" style="object-fit:cover" alt=""/>
+        <img src="img/logo_rectangle_B.png" width="100%" style="object-fit:cover" alt=""/>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

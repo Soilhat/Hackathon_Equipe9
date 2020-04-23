@@ -15,7 +15,12 @@ data = data.split(',')
 
 matieres = {
     "HG" : "Histoire-géographie",
-    "LV" : "LV1, LV2"
+    "LV" : "LV1, LV2",
+    "FR" : "Français",
+    "EMC" : "Enseignement moral et civique",
+    "EPS": "Education physique et sportive",
+    "ES" : "Enseignement scientifique",
+    "PHI" : "Philosophie"
 }
 data = [matieres[x] if x in matieres.keys() else x for x in data]
 # Chargement du jeu de données

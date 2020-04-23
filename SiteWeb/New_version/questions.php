@@ -36,7 +36,7 @@ include('header.php');
             {
                 //Si ca a fonctionne, on naffiche pas le formulaire
                 $form = false;
-                header('Location: home.php');
+                //header('Location: home.php');
                 exit();
             }
             else
@@ -146,7 +146,7 @@ include('header.php');
             <select name="pref1" required>
                 <option value=""></option>
                 <option value="Dessiner ou peindre">Dessiner ou peindre</option>
-                <option value="Jouer aux echecs ou a un jeu de réflexion">Jouer aux échecs ou à un jeu de réflexion</option>
+                <option value="Jouer aux echecs ou à un eu de reflexion">Jouer aux échecs ou à un jeu de réflexion</option>
                 <option value="Monter un meuble en kit">Monter un meuble en kit</option>
             </select>
         </div><br>
@@ -157,7 +157,7 @@ include('header.php');
             <select name="pref2" required>
                 <option value=""></option>
                 <option value="Vous inscrire à un club ou une association">Vous inscrire à un club ou une association</option>
-                <option value="Gerer votre budget">Gérer votre budget</option>
+                <option value="Gérer votre budget">Gérer votre budget</option>
                 <option value="Réparer un objet">Réparer un objet</option>
             </select>
         </div><br>
