@@ -2,8 +2,13 @@
 include('../db/config.php');
 
     include('header.php');
+    if(isset($_SESSION['email']))
+        {
+    //On recupere le nombre d'utilisateurs pour donner un identifiant a l'utilisateur actuel
+    $dn2 = mysqli_num_rows(mysqli_query($con,'select id from student where email = "'.$_SESSION['email'].'"'));
+    $id = $dn2;
 
-    $query = "SELECT * FROM `questionnaire` ORDER BY `idQ` DESC LIMIT 1";
+    $query = "SELECT * FROM `questionnaire` WHERE `idStudent` = ".$id." ORDER BY `idQ` DESC LIMIT 1";
     if ($result = mysqli_query($con, $query)) {
     
 
@@ -16,8 +21,12 @@ include('../db/config.php');
             $data = json_encode($data, JSON_UNESCAPED_UNICODE);
             $command = "cd .. & activate hackathon2020 & python ../ml_scripts/predict.py $data 2>&1";
             shell_exec("activate base");
-            $output = shell_exec($command);
-            echo utf8_encode($output);
+            $output = utf8_encode(shell_exec($command));
+            ?><div class="container text-center">
+            <div class="">Domaine : <?php echo $output;?></div>
+            <a href="dashboard.php">Voir mon Dashboard</a>
+            </div>
+            <?php
         }
     
         /* Libère le jeu de résultats */
@@ -27,6 +36,7 @@ include('../db/config.php');
     {
         echo mysqli_error($con);
     }
+}
     ?>
    
 
